@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.SessionScoped;
+import javax.faces.view.ViewScoped;
 
 
 
@@ -19,6 +20,7 @@ import org.primefaces.model.menu.MenuModel;
 
 @Named
 @SessionScoped//porque el menu va a ser traido por varias paginas
+//@ViewScoped --con esta anotacion si cargan la lista de menus
 public class MenuController implements Serializable {
 
     @EJB
