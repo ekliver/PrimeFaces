@@ -5,6 +5,7 @@
  */
 package com.kliver.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,35 +19,36 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="nota")
-public class Nota {
+@Table(name = "nota")
+public class Nota implements Serializable {
 
-   @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-     private int codigo;
-   @ManyToOne
-   @JoinColumn(name="codigo_persona",nullable=false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int codigo;
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_persona", nullable = false)
     private Persona persona;
-   
-   @ManyToOne
-   @JoinColumn(name="codigo_categoria",nullable=false)
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_categoria", nullable = false)
     private Categoria categoria;
-    
-    @Column(name="encabezado")
+
+    @Column(name = "encabezado")
     private String encabezado;
-    
-    @Column(name="cuerpo")
+
+    @Column(name = "cuerpo")
     private String cuerpo;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha")
+    @Column(name = "fecha", insertable = false)
     private Date fecha;
-    
-    @Column(name="comentarioAdmin")
+
+    @Column(name = "comentarioAdmin")
     private String comentarioAdmin;
-    
-    @Column(name="valoracion")
-    private short valoracion;
+
+    @Column(name = "valoracion")
+    private Integer valoracion;
 
     public int getCodigo() {
         return codigo;
@@ -104,14 +106,16 @@ public class Nota {
         this.comentarioAdmin = comentarioAdmin;
     }
 
-    public short getValoracion() {
+    public Integer getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(short valoracion) {
+    public void setValoracion(Integer valoracion) {
         this.valoracion = valoracion;
     }
 
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -142,6 +146,4 @@ public class Nota {
         return "Nota{" + "codigo=" + codigo + '}';
     }
 
-    
-    
 }

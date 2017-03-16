@@ -5,8 +5,10 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="index.css"/>
     </h:head>
-    <h:body>
+    <h:body id="principal">
+        <div id="cuadro">
          <h:form>
             
             <p:messages autoUpdate="true" showSummary="true" showDetail="true"/>
@@ -27,7 +29,7 @@
             <p:link value="Crear Cuenta" outcome="usuario"/>
            
         </h:form>
-            
+            </div>
     </h:body>
 </html>
 

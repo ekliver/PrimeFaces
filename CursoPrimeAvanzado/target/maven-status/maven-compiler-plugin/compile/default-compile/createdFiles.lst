@@ -11,7 +11,6 @@ com\kliver\model\Categoria.class
 com\kliver\model\Persona.class
 com\kliver\ejb\UsuarioFacadeLocal.class
 com\kliver\ejb\PersonaFacadeLocal.class
-com\kliver\controller\MenuView.class
 com\kliver\ejb\CategoriaFacadeLocal.class
 com\kliver\ejb\MenuFacade.class
 com\kliver\model\Menu.class

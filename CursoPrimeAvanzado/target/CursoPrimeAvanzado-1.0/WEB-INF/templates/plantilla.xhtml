@@ -18,7 +18,12 @@
         <div id="top">
             <ui:insert name="top">
                 <h:form>
-                    <p:menu model="#{menuController.model}"/>
+                    <p:menubar model="#{menuController.model}">
+                        <f:facet name="options">
+                            <p:commandButton actionListener="#{menuController.cerrarSesion()}" icon="ui-icon-power" title="Cerrar sesion" action="/index?faces-redirect=true" />    
+                        </f:facet>
+                    </p:menubar>
+
                 </h:form>
             </ui:insert>
         </div>
@@ -28,8 +33,11 @@
 
         </div>
 
-        <div id="bottom">
-            <ui:insert name="bottom">Bottom</ui:insert>
+        <div id="bottom" style="text-align: center">
+            <ui:insert name="bottom">
+                <p>Ejemplo de Primefaces Avazado por Kliver</p>
+                <p>Suscribete al canal</p>
+            </ui:insert>
         </div>
 
     </h:body>
